@@ -20,6 +20,10 @@ public class review {
         this.review_body = review_body;
     }
 
+    public review(String review_body){
+        this.review_body = review_body;
+    }
+
     public ObjectId get_id() { return id; }
     public void set_id(ObjectId id) { this.id = id; }
 
