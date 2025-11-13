@@ -19,13 +19,18 @@ public class movieController {
     @Autowired
     private movieService movie_service;
 
-    @GetMapping("/get")
+    @GetMapping("/get_all")
     public ResponseEntity<List<movie>> get_all_movies(){
         return new ResponseEntity<List<movie>>(movie_service.all_movies(), HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public ResponseEntity<Optional<movie>> get_single_movie(@PathVariable ObjectId id){
         return new ResponseEntity<Optional<movie>>(movie_service.single_movie(id), HttpStatus.OK);
+    }
+
+    @GetMapping("/imdb_id/{imdb_id}")
+    public ResponseEntity<Optional<movie>> get_single_movie_by_imdb_id(@PathVariable String imdb_id){
+        return new ResponseEntity<Optional<movie>>(movie_service.single_movie_by_imdb_id(imdb_id), HttpStatus.OK);
     }
 }
