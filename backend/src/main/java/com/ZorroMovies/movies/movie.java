@@ -27,7 +27,7 @@ public class movie {
     private List<String> backdrops;
 
     @DocumentReference()
-    private List<String> reviewIds;
+    private List<review> reviewIds;
 
     // no Args constructor
     public movie() {}
@@ -68,8 +68,8 @@ public class movie {
     public List<String> get_backdrops() { return backdrops; }
     public void set_backdrops( List<String> backdrops) { this.backdrops = backdrops; }
 
-    public List<String> get_reviewIds() { return reviewIds; }
-    public void set_reviewIds( List<String> reviewIds) { this.reviewIds = reviewIds; }
+    public List<review> get_reviewIds() { return reviewIds; }
+    public void set_reviewIds( List<review> reviewIds) { this.reviewIds = reviewIds; }
 
     @Override
     public String toString(){
