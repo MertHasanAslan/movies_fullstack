@@ -9,7 +9,7 @@ import Home from "./components/home/Home";
 
 function App() {
 
-    const [movies, setMovies] = useState();
+    const [movies, setMovies] = useState([]);
     
     const getMovies = async () =>{
 
@@ -41,7 +41,7 @@ function App() {
 
             <Routes>
                 <Route path="/" element={<Layout/>}>
-                    <Route index element={<Home />} />
+                    <Route index element={<Home movies={movies} />} />
                 </Route>
             </Routes>
 
